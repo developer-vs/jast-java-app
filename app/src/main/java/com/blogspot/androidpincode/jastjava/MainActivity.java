@@ -1,11 +1,9 @@
 package com.blogspot.androidpincode.jastjava;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
-
-import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         int price = calculatePrice();
-        String priceMessage = "Total: $" + price + "\nThank you!";
+        String priceMessage = createOrderSummary(price);
         displayMessage(priceMessage);
     }
 
@@ -48,8 +46,22 @@ public class MainActivity extends AppCompatActivity {
      * @return total price
      */
     private int calculatePrice() {
-        int price = quantity * 5;
-        return price;
+        return quantity * 5;
+    }
+
+    /**
+     * Create summary of the order.
+     *
+     * @param price of the order
+     * @return text summary of order
+     */
+    private String createOrderSummary(int price) {
+        String priceMessage = "" +
+                "Order #: 243" +
+                "\nQuantity: " + quantity +
+                "\nTotal: $" + price +
+                "\nThank you!";
+        return priceMessage;
     }
 
     /**
@@ -62,19 +74,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method displays the given price on the screen.
-     */
-    private void displayPrice(int number) {
-        TextView priceTextView = findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
-
-    /**
      * This method displays the given text on the screen.
      */
     private void displayMessage(String message) {
-        TextView priceTextView = findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView orderSummaryTextView = findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
     }
-
 }
