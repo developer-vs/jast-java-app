@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Просто Java</string>
+    <string name="chocolate">Шоколад</string>
+    <string name="initial_quantity_value">2</string>
+    <string name="name">Имя</string>
+    <string name="order">Заказ</string>
+    <string name="order_summary_chocolate">Добавить шоколад? <xliff:g id="addChocolate" example="true">%b</xliff:g></string>
+    <string name="order_summary_email_subject">Just Java заказ для <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="order_summary_name">Имя: <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="order_summary_price">Итого: <xliff:g id="price" example="$10">%s</xliff:g></string>
+    <string name="order_summary_quantity">Количество: <xliff:g id="quantity" example="2">%d</xliff:g></string>
+    <string name="order_summary_whipped_cream">Добавить взбитые сливки? <xliff:g id="addWhippedCream" example="true">%b</xliff:g></string>
+    <string name="quantity">Количество</string>
+    <string name="thank_you">Спасибо!</string>
+    <string name="toppings">Добавки</string>
+    <string name="whipped_cream">Взбитые сливки</string>
+    <string name="settings">Настройки</string>
+    <string name="toastDown">Количество не должно быть меньше 1</string>
+    <string name="toastUp">Количество не должно быть больше 100</string>
+    <string name="no">нет</string>
+    <string name="yes">да</string>
+</resources>
