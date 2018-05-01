@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
 
+        // Field to receive a customer name
         EditText nameField = findViewById(R.id.name_field);
         String name = nameField.getText().toString();
         Log.v("MainActivity", "Name: " + name);
