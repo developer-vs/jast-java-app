@@ -1,6 +1,9 @@
 package com.blogspot.androidpincode.jastjava;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -22,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the plus button is clicked.
      */
     public void increment(View view) {
+
+        if(quantity == 100) {
+            return;
+        }
         quantity = quantity + 1;
         displayQuantity(quantity);
     }
@@ -30,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the minus button is clicked.
      */
     public void decrement(View view) {
+
+        if(quantity == 1) {
+            return;
+        }
         quantity = quantity - 1;
         displayQuantity(quantity);
     }
@@ -39,23 +50,29 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
 
-        EditText nameField = findViewById(R.id.name_field);
-        String name = nameField.getText().toString();
-        Log.v("MainActivity", "Name: " + name);
+//        EditText nameField = findViewById(R.id.name_field);
+//        String name = nameField.getText().toString();
+//        Log.v("MainActivity", "Name: " + name);
+//
+//        // Figure out if the user wants whipped cream topping
+//        CheckBox whippedCreamCheckBox = findViewById(R.id.whipped_cream_checkbox);
+//        boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
+//        Log.v("MainActivity", "Has whipped cream: " + hasWhippedCream);
+//
+//        // Figure out if the user wants chocolate topping
+//        CheckBox chocolateCheckBox = findViewById(R.id.chocolate_checkbox);
+//        boolean hasChocolate = chocolateCheckBox.isChecked();
+//        Log.v("MainActivity", "Has chocolate: " + hasChocolate);
+//
+//        int price = calculatePrice(hasWhippedCream, hasChocolate);
+//        String priceMessage = createOrderSummary(name, price, hasWhippedCream, hasChocolate);
+//        displayMessage(priceMessage);
 
-        // Figure out if the user wants whipped cream topping
-        CheckBox whippedCreamCheckBox = findViewById(R.id.whipped_cream_checkbox);
-        boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
-        Log.v("MainActivity", "Has whipped cream: " + hasWhippedCream);
-
-        // Figure out if the user wants chocolate topping
-        CheckBox chocolateCheckBox = findViewById(R.id.chocolate_checkbox);
-        boolean hasChocolate = chocolateCheckBox.isChecked();
-        Log.v("MainActivity", "Has chocolate: " + hasChocolate);
-
-        int price = calculatePrice(hasWhippedCream, hasChocolate);
-        String priceMessage = createOrderSummary(name, price, hasWhippedCream, hasChocolate);
-        displayMessage(priceMessage);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("geo:47.6,-122.3"));
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
     /**
