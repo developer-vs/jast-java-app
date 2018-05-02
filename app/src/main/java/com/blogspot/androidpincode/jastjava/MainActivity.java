@@ -9,6 +9,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     int quantity = 2;
@@ -109,13 +111,14 @@ public class MainActivity extends AppCompatActivity {
      * @param addChocolate    is whether or not the user wants chocolate topping
      * @return text summary of order
      */
-    private String createOrderSummary(
-            String name, int price, boolean addWhippedCream, boolean addChocolate) {
+    private String createOrderSummary(String name, int price, boolean addWhippedCream,
+                                      boolean addChocolate) {
         String priceMessage = getString(R.string.order_summary_customer_name, name);
         priceMessage += "\n" + getString(R.string.order_summary_whipped_cream, addWhippedCream);
         priceMessage += "\n" + getString(R.string.order_summary_chocolate, addChocolate);
         priceMessage += "\n" + getString(R.string.order_summary_quantity, quantity);
-        priceMessage += "\n" + getString(R.string.order_summary_price, price);
+        priceMessage += "\n" + getString(R.string.order_summary_price,
+                NumberFormat.getCurrencyInstance().format(price)); // it's return a string
         priceMessage += "\n" + getString(R.string.order_summary_thank_you);
         return priceMessage;
     }
