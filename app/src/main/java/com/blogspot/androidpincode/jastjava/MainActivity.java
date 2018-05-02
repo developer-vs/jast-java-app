@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -67,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
         String priceMessage = createOrderSummary(name, price, hasWhippedCream, hasChocolate);
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Just Java order for " + name);
+        intent.setData(Uri.parse(getString(R.string.mailto))); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.order_summary_email_subject, name));
         intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
@@ -110,12 +109,13 @@ public class MainActivity extends AppCompatActivity {
      * @param addChocolate    is whether or not the user wants chocolate topping
      * @return text summary of order
      */
-    private String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate) {
+    private String createOrderSummary(
+            String name, int price, boolean addWhippedCream, boolean addChocolate) {
         String priceMessage = getString(R.string.order_summary_customer_name, name);
-        priceMessage += "\nAdd whipped cream? " + addWhippedCream;
-        priceMessage += "\nAdd chocolate? " + addChocolate;
-        priceMessage += "\nQuantity: " + quantity;
-        priceMessage += "\n" + getString(R.string.order_summary_price, "" + price);
+        priceMessage += "\n" + getString(R.string.order_summary_whipped_cream, addWhippedCream);
+        priceMessage += "\n" + getString(R.string.order_summary_chocolate, addChocolate);
+        priceMessage += "\n" + getString(R.string.order_summary_quantity, quantity);
+        priceMessage += "\n" + getString(R.string.order_summary_price, price);
         priceMessage += "\n" + getString(R.string.order_summary_thank_you);
         return priceMessage;
     }

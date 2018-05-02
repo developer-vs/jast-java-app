@@ -1,25 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Title for the application. [CHAR LIMIT=12] -->
-    <string name="app_name">Just Java</string>
+    <string name="app_name">Sólo Java</string>
 
 
     <!--Main UI-->
 
     <!-- Hint text display in the empty field for the user's name [CHAR LIMIT=20] -->
-    <string name="name">Name</string>
+    <string name="name">Nombre</string>
 
     <!-- Header text for the list of toppings [CHAR LIMIT=20] -->
-    <string name="toppings">Toppings</string>
+    <string name="toppings">Ingredientes</string>
 
     <!-- Whipped cream topping [CHAR LIMIT=20] -->
-    <string name="whipped_cream">Whipped cream</string>
+    <string name="whipped_cream">Crema batida</string>
 
     <!-- Chocolate topping [CHAR LIMIT=20] -->
     <string name="chocolate">Chocolate</string>
 
     <!-- Title for the quantity [CHAR LIMIT=20] -->
-    <string name="quantity">Quantity</string>
+    <string name="quantity">Cantidad</string>
 
     <!-- Display quantity value [CHAR LIMIT=5] -->
     <string name="initial_quantity_value">2</string>
@@ -31,7 +32,7 @@
     <string name="plus_button">+</string>
 
     <!-- Order button [CHAR LIMIT=12] -->
-    <string name="order">Order</string>
+    <string name="order">Ordenar</string>
 
 
     <!--Email Order Summary-->
@@ -44,7 +45,7 @@
       "Just Java order for Amy" where Amy is the user's name. [CHAR LIMIT=NONE]
     -->
     <string name="order_summary_email_subject">
-        Just Java order for <xliff:g example="Amy" id="name">%s</xliff:g>
+        Solo orden de Java para Maria <xliff:g example="Amy" id="name">%s</xliff:g>
     </string>
 
     <!--
@@ -52,7 +53,7 @@
       user's name. [CHAR LIMIT=NONE]
     -->
     <string name="order_summary_customer_name">
-        Customer Name: <xliff:g example="Amy" id="customer_name">%s</xliff:g>
+        Nombre del cliente: <xliff:g example="Amy" id="customer_name">%s</xliff:g>
     </string>
 
     <!--
@@ -60,7 +61,7 @@
       "Add whipped cream? true" or "Add whipped cream? false". [CHAR LIMIT=NONE]
     -->
     <string name="order_summary_whipped_cream">
-        Add whipped cream? <xliff:g example="true" id="addWhippedCream">%b</xliff:g>
+        Agregue la crema batida? <xliff:g example="true" id="addWhippedCream">%b</xliff:g>
     </string>
 
     <!--
@@ -68,7 +69,7 @@
       "Add chocolate? true" or "Add chocolate? false". [CHAR LIMIT=NONE]
     -->
     <string name="order_summary_chocolate">
-        Add chocolate? <xliff:g example="true" id="addChocolate">%b</xliff:g>
+        Agregue el chocolate? <xliff:g example="true" id="addChocolate">%b</xliff:g>
     </string>
 
     <!--
@@ -76,7 +77,7 @@
       "Quantity: 2", where 2 is the number of cups ordered. [CHAR LIMIT=NONE]
     -->
     <string name="order_summary_quantity">
-        Quantity: <xliff:g example="2" id="quantity">%d</xliff:g>
+        Cantidad: <xliff:g example="2" id="quantity">%d</xliff:g>
     </string>
 
     <!--
@@ -84,10 +85,10 @@
       "Total: $10" where $10 is the price. [CHAR LIMIT=NONE]
     -->
     <string name="order_summary_price">
-        Total price: <xliff:g example="$10" id="price">$%d</xliff:g>
+        Precio total: <xliff:g example="$10" id="price">$%d</xliff:g>
     </string>
 
     <!-- Thank you message for the order summary. [CHAR LIMIT=NONE] -->
-    <string name="order_summary_thank_you">Thank you!</string>
+    <string name="order_summary_thank_you">¡Gracias!</string>
 
 </resources>
