@@ -51,17 +51,17 @@ public class MainActivity extends AppCompatActivity {
 
         EditText nameField = findViewById(R.id.name_field);
         String name = nameField.getText().toString();
-        Log.v("MainActivity", "Name: " + name);
-//
+//        Log.v("MainActivity", "Name: " + name);
+
         // Figure out if the user wants whipped cream topping
         CheckBox whippedCreamCheckBox = findViewById(R.id.whipped_cream_checkbox);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
-        Log.v("MainActivity", "Has whipped cream: " + hasWhippedCream);
-//
+//        Log.v("MainActivity", "Has whipped cream: " + hasWhippedCream);
+
         // Figure out if the user wants chocolate topping
         CheckBox chocolateCheckBox = findViewById(R.id.chocolate_checkbox);
         boolean hasChocolate = chocolateCheckBox.isChecked();
-        Log.v("MainActivity", "Has chocolate: " + hasChocolate);
+//        Log.v("MainActivity", "Has chocolate: " + hasChocolate);
 
         int price = calculatePrice(hasWhippedCream, hasChocolate);
         String priceMessage = createOrderSummary(name, price, hasWhippedCream, hasChocolate);
@@ -111,12 +111,12 @@ public class MainActivity extends AppCompatActivity {
      * @return text summary of order
      */
     private String createOrderSummary(String name, int price, boolean addWhippedCream, boolean addChocolate) {
-        String priceMessage = "Name: " + name;
+        String priceMessage = getString(R.string.order_summary_customer_name, name);
         priceMessage += "\nAdd whipped cream? " + addWhippedCream;
         priceMessage += "\nAdd chocolate? " + addChocolate;
         priceMessage += "\nQuantity: " + quantity;
-        priceMessage += "\nTotal: $" + price;
-        priceMessage += "\nThank you!";
+        priceMessage += "\n" + getString(R.string.order_summary_price, "" + price);
+        priceMessage += "\n" + getString(R.string.order_summary_thank_you);
         return priceMessage;
     }
 

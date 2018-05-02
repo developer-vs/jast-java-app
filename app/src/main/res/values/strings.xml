@@ -1,3 +1,57 @@
-<resources>
-    <string name="app_name">Jast Java</string>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Title for the application. [CHAR LIMIT=12] -->
+    <string name="app_name">Just Java</string>
+
+    <!--Main UI-->
+
+    <!-- Hint text display in the empty field for the user's name [CHAR LIMIT=20] -->
+    <string name="name">Name</string>
+
+    <!-- Header text for the list of toppings [CHAR LIMIT=20] -->
+    <string name="toppings">Toppings</string>
+
+    <!-- Whipped cream topping [CHAR LIMIT=20] -->
+    <string name="whipped_cream">Whipped cream</string>
+
+    <!-- Chocolate topping [CHAR LIMIT=20] -->
+    <string name="chocolate">Chocolate</string>
+
+    <!-- Title for the quantity [CHAR LIMIT=20] -->
+    <string name="quantity">Quantity</string>
+
+    <!-- Display quantity value [CHAR LIMIT=5] -->
+    <string name="initial_quantity_value">2</string>
+
+    <!-- Minus button [CHAR LIMIT=5] -->
+    <string name="minus_button">-</string>
+
+    <!-- Plus button [CHAR LIMIT=5] -->
+    <string name="plus_button">+</string>
+
+    <!-- Order button [CHAR LIMIT=12] -->
+    <string name="order">Order</string>
+
+
+    <!--Email Order Summary-->
+
+    <!--
+      Name for the order summary. It will be shown in the format of "Name: Amy" where Amy is the
+      user's name. [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_customer_name">
+        Name: <xliff:g id="customer_name" example="Amy">%1$s</xliff:g>
+    </string>
+
+    <!--
+      Total price for the order summary. It will be shown in the format of
+      "Total: $10" where $10 is the price. [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_price">
+        Total price: <xliff:g id="price" example="$10">$%1$s</xliff:g>
+    </string>
+
+
+    <!-- Thank you message for the order summary. [CHAR LIMIT=NONE] -->
+    <string name="order_summary_thank_you">Thank you!</string>
 </resources>
