@@ -19,76 +19,108 @@
             android:inputType="textCapWords" />
 
         <TextView
+            style="@style/HeaderTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/toppings"
-            style="@style/HeaderTextStyle" />
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
 
-        <CheckBox
-            android:id="@+id/whipped_cream_checkbox"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingEnd="24dp"
-            android:paddingLeft="24dp"
-            android:paddingStart="24dp"
-            android:text="@string/whipped_cream"
-            android:textSize="16sp" />
+            android:orientation="vertical">
 
-        <CheckBox
-            android:id="@+id/chocolate_checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingEnd="24dp"
-            android:paddingLeft="24dp"
-            android:paddingStart="24dp"
-            android:text="@string/chocolate"
-            android:textSize="16sp" />
+            <CheckBox
+                android:id="@+id/whipped_cream_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="24dp"
+                android:paddingLeft="24dp"
+                android:paddingStart="24dp"
+                android:text="@string/whipped_cream"
+                android:textColor="#757575"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/chocolate_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="24dp"
+                android:paddingLeft="24dp"
+                android:paddingStart="24dp"
+                android:text="@string/chocolate"
+                android:textColor="#757575"
+                android:textSize="16sp" />
+
+        </LinearLayout>
 
         <TextView
+            style="@style/HeaderTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/quantity"
-            style="@style/HeaderTextStyle" />
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:onClick="decrement"
-                android:text="@string/minus_button" />
+                android:text="@string/minus_button"
+                android:textColor="#757575"
+                android:textSize="28sp" />
 
             <TextView
                 android:id="@+id/quantity_text_view"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="@string/initial_quantity_value"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textColor="@color/colorPrimary"
+                android:textSize="56sp" />
 
             <Button
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:onClick="increment"
-                android:text="@string/plus_button" />
+                android:text="@string/plus_button"
+                android:textColor="#757575"
+                android:textSize="28sp" />
 
         </LinearLayout>
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_width="176dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
             android:onClick="submitOrder"
-            android:text="@string/order" />
+            android:paddingBottom="6dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="6dp"
+            android:text="@string/order"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp" />
 
     </LinearLayout>
 

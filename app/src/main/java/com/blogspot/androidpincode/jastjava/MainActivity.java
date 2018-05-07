@@ -13,7 +13,7 @@ import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-    int quantity = 2;
+    int quantity = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void decrement(View view) {
 
-        if (quantity == 1) {
+        if (quantity == 0) {
             return;
         }
         quantity = quantity - 1;
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse(getString(R.string.mailto))); // only email apps should handle this
-        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.order_summary_email_subject, name));
+        intent.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.order_summary_email_subject, name));
         intent.putExtra(Intent.EXTRA_TEXT, priceMessage);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
@@ -113,13 +113,24 @@ public class MainActivity extends AppCompatActivity {
      */
     private String createOrderSummary(String name, int price, boolean addWhippedCream,
                                       boolean addChocolate) {
-        String priceMessage = getString(R.string.order_summary_customer_name, name);
-        priceMessage += "\n" + getString(R.string.order_summary_whipped_cream, addWhippedCream);
-        priceMessage += "\n" + getString(R.string.order_summary_chocolate, addChocolate);
-        priceMessage += "\n" + getString(R.string.order_summary_quantity, quantity);
-        priceMessage += "\n" + getString(R.string.order_summary_price,
+        String whippedCreamTopping = getResources().getString(R.string.order_summary_no);
+        String chocolateTopping = getResources().getString(R.string.order_summary_no);
+
+        if (addWhippedCream) {
+            whippedCreamTopping = getResources().getString(R.string.order_summary_yes);
+        }
+
+        if (addChocolate) {
+            chocolateTopping = getResources().getString(R.string.order_summary_yes);
+        }
+
+        String priceMessage = getResources().getString(R.string.order_summary_customer_name, name);
+        priceMessage += "\n" + getResources().getString(R.string.order_summary_whipped_cream, whippedCreamTopping);
+        priceMessage += "\n" + getResources().getString(R.string.order_summary_chocolate, chocolateTopping);
+        priceMessage += "\n" + getResources().getString(R.string.order_summary_quantity, quantity);
+        priceMessage += "\n" + getResources().getString(R.string.order_summary_price,
                 NumberFormat.getCurrencyInstance().format(price)); // it's return a string
-        priceMessage += "\n" + getString(R.string.order_summary_thank_you);
+        priceMessage += "\n" + getResources().getString(R.string.order_summary_thank_you);
         return priceMessage;
     }
 

@@ -22,7 +22,7 @@
     <string name="quantity">Quantity</string>
 
     <!-- Display quantity value [CHAR LIMIT=5] -->
-    <string name="initial_quantity_value">2</string>
+    <string name="initial_quantity_value">0</string>
 
     <!-- Minus button [CHAR LIMIT=5] -->
     <string name="minus_button">-</string>
@@ -57,18 +57,18 @@
 
     <!--
       Whipped cream topping for the order summary. It will be shown in the format of
-      "Add whipped cream? true" or "Add whipped cream? false". [CHAR LIMIT=NONE]
+      "Add whipped cream? yes" or "Add whipped cream? no". [CHAR LIMIT=NONE]
     -->
     <string name="order_summary_whipped_cream">
-        Add whipped cream? <xliff:g example="true" id="addWhippedCream">%b</xliff:g>
+        Add whipped cream? <xliff:g example="true" id="addWhippedCream">%s</xliff:g>
     </string>
 
     <!--
       Chocolate topping for the order summary. It will be shown in the format of
-      "Add chocolate? true" or "Add chocolate? false". [CHAR LIMIT=NONE]
+      "Add chocolate? yes" or "Add chocolate? no". [CHAR LIMIT=NONE]
     -->
     <string name="order_summary_chocolate">
-        Add chocolate? <xliff:g example="true" id="addChocolate">%b</xliff:g>
+        Add chocolate? <xliff:g example="true" id="addChocolate">%s</xliff:g>
     </string>
 
     <!--
@@ -89,5 +89,11 @@
 
     <!-- Thank you message for the order summary. [CHAR LIMIT=NONE] -->
     <string name="order_summary_thank_you">Thank you!</string>
+
+    <!-- Will show "yes" if the customer wants to add some topping. [CHAR LIMIT=12] -->
+    <string name="order_summary_yes">yes</string>
+
+    <!-- Will show "no" if the customer doesn't want to add some topping. [CHAR LIMIT=12] -->
+    <string name="order_summary_no">no</string>
 
 </resources>
