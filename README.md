@@ -1,5 +1,5 @@
-# Just Java Android application 
 # (Android Nanodegree program)
+# Just Java Android application 
 
 Just Java app, allows a user to fill out a form to order coffee.
 
