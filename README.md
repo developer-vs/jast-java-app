@@ -1,4 +1,4 @@
-# Android Nanodegree program
+# Android Basics Nanodegree Program by Google
 ## Just Java Android application 
 
 Just Java app, allows a user to fill out a form to order coffee.
